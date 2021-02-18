@@ -13,3 +13,11 @@ curl $APISERVER/api --header "Authorization: Bearer $TOKEN" --insecurem
 
 
 helm install cilium cilium/cilium  --namespace=kube-system --set global.k8sServiceHost=b19188c1-eu-de.lb.appdomain.cloud --set global.k8sServicePort=6443
+
+
+kubeadm token create --print-join-command
+
+
+kubectl -n kube-system get cm kubeadm-config -o yaml
+
+kubeadm token create --print-join-command  --certificate-key  sdfasjakjsfdhj364125443124

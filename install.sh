@@ -120,4 +120,4 @@ sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
 
-sudo kubeadm init --control-plane-endpoint "b19188c1-eu-de.lb.appdomain.cloud:6443" --upload-certs --pod-network-cidr 192.168.0.0/16  --skip-phases=addon/kube-proxy
+#sudo kubeadm init --control-plane-endpoint "b19188c1-eu-de.lb.appdomain.cloud:6443" --upload-certs --pod-network-cidr 192.168.0.0/16  --skip-phases=addon/kube-proxy
