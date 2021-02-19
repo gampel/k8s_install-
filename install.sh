@@ -118,6 +118,10 @@ EOF
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
-
-
+ swapoff -a
+curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
+sudo apt-get install apt-transport-https --yes
+echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+sudo apt-get update
+sudo apt-get install helm
 #sudo kubeadm init --control-plane-endpoint "b19188c1-eu-de.lb.appdomain.cloud:6443" --upload-certs --pod-network-cidr 192.168.0.0/16  --skip-phases=addon/kube-proxy
