@@ -44,3 +44,4 @@ kubectl get svc --namespace=kube-system
 kubectl get endpoints kube-dns --namespace=kube-system
 kubectl -n kube-system exec -ti cilium-ttqrk -- cilium bpf tunnel list
 kubectl get configmap -n kube-system cilium-config -o yaml 
+kubectl get pods,services,deployments,jobs,daemonset
