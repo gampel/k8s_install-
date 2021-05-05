@@ -124,4 +124,5 @@ sudo apt-get install apt-transport-https --yes
 echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
 sudo apt-get update
 sudo apt-get install helm
+systemctl mask swapfile.swap
 #sudo kubeadm init --control-plane-endpoint "b19188c1-eu-de.lb.appdomain.cloud:6443" --upload-certs --pod-network-cidr 192.168.0.0/16  --skip-phases=addon/kube-proxy
