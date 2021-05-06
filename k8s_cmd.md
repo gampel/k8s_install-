@@ -46,4 +46,7 @@ kubectl -n kube-system exec -ti cilium-ttqrk -- cilium bpf tunnel list
 kubectl get configmap -n kube-system cilium-config -o yaml 
 kubectl get pods,services,deployments,jobs,daemonset
 kubectl get events --all-namespaces  --sort-by='.metadata.creationTimestamp'
+kubectl edit configmap -n  kube-system  hubble-ui-envoy  -o yaml
 helm upgrade -n kube-system cilium cilium/cilium --version 1.9.6 --set hubble.ui.backend.image.tag=v0.7.9 --set hubble.ui.frontend.image.tag=v0.7.9 --reuse-values
+helm upgrade -n kube-system cilium cilium/cilium --version 1.9.6 --set hubble.ui.proxy.image.tag=v1.18.2 --reuse-values
+kubectl get pods --all-namespaces | grep hubble-ui | awk '{print $2 " --namespace=" $1}'  | xargs kubectl delete pod
