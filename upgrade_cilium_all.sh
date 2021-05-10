@@ -8,4 +8,4 @@ helm upgrade  cilium cilium/cilium --version 1.9.6 \
     --set prometheus.enabled=true \
     --set hubble.metrics.enabled="{dns,drop,tcp,flow,icmp,http}" \
     --set operator.prometheus.enabled=true \
-    --set hubble.ui.enabled=true   --set k8sServicePort=$API_SERVER_PORT --set hubble.ui.backend.image.tag=v0.7.9 --set hubble.ui.frontend.image.tag=v0.7.9
+    --set hubble.ui.enabled=true   --set k8sServicePort=$API_SERVER_PORT --set hubble.ui.backend.image.tag=v0.7.9 --set hubble.ui.frontend.image.tag=v0.7.9 --reuse-values
